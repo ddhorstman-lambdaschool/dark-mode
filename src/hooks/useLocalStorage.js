@@ -4,7 +4,7 @@ export default function useLocalStorage(key, initialValue) {
     if (typeof initialValue !== "string") initialValue = JSON.stringify(initialValue);
     const [value, setValue] = React.useState(() => JSON.parse(window.localStorage.getItem(key) ?? initialValue));
     const setValueLocalStorage = (newValue) => {
-        console.log("set value to",newValue);
+        //console.log("set value to",newValue);
         setValue(newValue);
         window.localStorage.setItem(key, JSON.stringify(newValue));
     };
